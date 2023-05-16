@@ -19,11 +19,11 @@ function App() {
   useEffect(()=>{
     if(filtered && city !== undefined && country !== undefined ){
       console.log(city)
-      setCopia(datos.filter(stay => stay.city.toLowerCase() == city.toLowerCase() && stay.country.toLowerCase() == country.toLowerCase()))
+      setCopia(datos.filter(stay => stay.city.toLowerCase() == city.toLowerCase() && stay.country.toLowerCase() == country.toLowerCase() && stay.maxGuests <= maxGuests))
       setFiltered(false)
     }
       
-  },[city,country,filtered])
+  },[city,country,filtered,maxGuests])
   
   return (
     <>

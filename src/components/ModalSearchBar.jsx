@@ -12,9 +12,8 @@ export default function ModalSearchBar() {
         setLocation(position)
     }
     function handleGuess(e){
-        if(parseInt(isNaN(e.target.value))){
-            setGuess(parseInt(e.target.value))
-        }
+        setGuess(parseInt(e.target.value))
+        console.log(guess)
         
     }
     function handleClick(){
