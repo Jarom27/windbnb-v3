@@ -19,7 +19,7 @@ function App() {
   useEffect(()=>{
     if(filtered && city !== undefined && country !== undefined ){
       console.log(city)
-      setCopia(datos.filter(stay => stay.city.toLowerCase() == city.toLowerCase()))
+      setCopia(datos.filter(stay => stay.city.toLowerCase() == city.toLowerCase() && stay.country.toLowerCase() == country.toLowerCase()))
       setFiltered(false)
     }
       
