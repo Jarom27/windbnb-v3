@@ -5,12 +5,14 @@ import SearchBar from "./SearchBar"
 import { useContext, useState } from "react";
 
 export default function Header() {
-  const {modal,setModal} =useContext(SearchContext)
+  const {modal,setModal,setIsLocation} =useContext(SearchContext)
   function handlerLocationInput(e){
       setModal(true);
+      setIsLocation(true)
   }
   function handleGuessInput(e){
       setModal(true)
+      setIsLocation(false)
   }
   return (
     <>

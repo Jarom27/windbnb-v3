@@ -8,12 +8,15 @@ export function SearchProvider({children}) {
     const [modal, setModal] = useState(false);
     const [maxGuests,setMaxGuests] = useState(99)
     const [filtered,setFiltered] = useState(false)
+    const [isLocation,setIsLocation] = useState(true)
     const info = {
+        isLocation,
         modal,
         city,
         country,
         maxGuests,
         filtered,
+        setIsLocation,
         setFiltered,
         setCountry,
         setModal,
