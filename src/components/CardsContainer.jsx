@@ -1,21 +1,9 @@
+/* eslint-disable react/prop-types */
 
 import Card from "./Card";
-import { useState,useContext, useEffect } from "react";
-import SearchContext from "../context/SearchContext";
 
-export default function CardsContainer() {
-  const [datos,setDatos] = useState([]);
-  const [copia,setCopia] = useState([])
-  useEffect(()=>{
-      fetch('./stays.json')
-      .then(res => res.json())
-      .then(res => {
-        setDatos(res)
-        setCopia(res)
-      })
-
-  },[])
-
+export default function CardsContainer({datos}) {
+  
   return (
     <>
       <div className="p-3 flex justify-between">
@@ -23,7 +11,7 @@ export default function CardsContainer() {
         <h2 className="font-bold text-md">12+ stays</h2>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 p-3">
-        {copia.map((stay,index) => <Card key={index} stay={stay}></Card>)}
+        {datos.map((stay,index) => <Card key={index} stay={stay}></Card>)}
       </div>
     </>
     

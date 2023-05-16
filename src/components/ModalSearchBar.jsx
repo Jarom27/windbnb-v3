@@ -4,11 +4,12 @@ import ListCities from './ListCities';
 import { MdSearch } from 'react-icons/md';
 
 export default function ModalSearchBar() {
-    const [location,setLocation] = useState("");
+    const [location,setLocation] = useState([]);
     const [guess,setGuess] = useState(99)
-    const {setFiltro,setMaxGuess,setModal,setFiltered} = useContext(SearchContext);
+    const {setMaxGuests,setCity,setCountry,setFiltered,setModal} = useContext(SearchContext);
     function handleLocation(e){
-        setLocation(e.target.value)
+        let position = e.target.value.split(",")
+        setLocation(position)
     }
     function handleGuess(e){
         if(parseInt(isNaN(e.target.value))){
@@ -17,10 +18,11 @@ export default function ModalSearchBar() {
         
     }
     function handleClick(){
-        setFiltro(location)
-        setMaxGuess(guess)
+        setCity(location[0])
+        setCountry(location[1].trim())
+        setMaxGuests(guess);
+        setFiltered(true);
         setModal(false)
-        setFiltered(true)
     }
     return (
         <>

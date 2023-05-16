@@ -1,20 +1,24 @@
-import React, { createContext, useState } from 'react'
+/* eslint-disable react/prop-types */
+import { createContext, useState } from 'react'
 
 const SearchContext = createContext()
 export function SearchProvider({children}) {
-    const [filtro,setFiltro] = useState("");
+    const [city,setCity] = useState("Where are you going to go? ");
+    const [country,setCountry] = useState("finland")
     const [modal, setModal] = useState(false);
-    const [maxGuess,setMaxGuess] = useState(99)
+    const [maxGuests,setMaxGuests] = useState(99)
     const [filtered,setFiltered] = useState(false)
     const info = {
         modal,
-        filtro,
-        maxGuess,
+        city,
+        country,
+        maxGuests,
         filtered,
+        setFiltered,
+        setCountry,
         setModal,
-        setMaxGuess,
-        setFiltro,
-        setFiltered
+        setMaxGuests,
+        setCity
     }
     return (
             <SearchContext.Provider value={info}>
