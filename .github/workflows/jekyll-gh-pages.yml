@@ -46,6 +46,9 @@ jobs:
         with:
           # Subir repositorio dist
           path: './dist'
+      - name: Tailwind
+        run: npm install -D tailwindcss
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
