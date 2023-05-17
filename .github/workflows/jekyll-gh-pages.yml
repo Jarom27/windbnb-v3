@@ -48,8 +48,6 @@ jobs:
           path: './dist'
       - name: Tailwind
         run: npm install -D tailwindcss
-      - name: Tailwind build
-        run: npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 
       - name: Deploy to GitHub Pages
         id: deployment
